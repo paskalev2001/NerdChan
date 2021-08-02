@@ -1,0 +1,2 @@
+# NerdChan
+Python Voice assistant
