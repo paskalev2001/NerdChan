@@ -4,6 +4,7 @@ import wikipedia
 import speech_recognition as sr
 import pyttsx3
 import PySimpleGUI as sg
+import sys
 
 def readConfig(name):
     configFile = open("./config/"+name,'r')
@@ -66,8 +67,14 @@ def wikiWolf(currentConfig):
 
     window.close()
 
-
-currentConfig = readConfig("Default.config")
+currentConfig = {}
+if (len(sys.argv) == 1):
+    currentConfig = readConfig("Default.config")
+elif (len(sys.argv) == 2):
+    currentConfig = readConfig(sys.argv[1])
+else:
+    print("Usage: python3 NerdChan.py SomeFile.config (Optional)")
+    sys.exit()
 
 client = wolframalpha.Client(currentConfig["apiKey"])
 sg.theme(currentConfig["theme"])
