@@ -1,14 +1,12 @@
 # NerdChan
 Python Voice assistant
 
-### intstallation
-The following is installation instructions for Ubuntu 18
+### Intstallation
+The following is installation instructions for Ubuntu 18.04 LTS:
 ```
-pip3 install wolframalpha
-pip3 install wikipedia
-pip3 install PySimpleGUI
+pip install virtualenv
+python3 -m venv nerdChanVENV
+. nerdChanVENV/bin/activate
 sudo apt-get install python-pyaudio python3-pyaudio
-pip3 install SpeechRecognition
-pip install pyaudio
-pip3 install pyttsx3
+pip3 install requirements.txt
 ```
